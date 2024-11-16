@@ -7,14 +7,29 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-header {
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container */
+#container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation */
+nav {
     background-color: #333;
-    color: #fff;
     padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
@@ -24,72 +39,105 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-right: 20px;
 }
 
-nav ul li a {
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav a {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
+nav a:hover {
+    color: #f4b400;
 }
 
-/* Main Content */
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Image Styling */
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #2e3d4f;
-}
+/* Responsive Layout */
 
-.intro, .movie-info {
-    margin-bottom: 30px;
-}
-
-/* Responsive Design */
-@media only screen and (max-width: 768px) {
+/* Mobile Styles */
+@media (max-width: 600px) {
     nav ul {
         flex-direction: column;
-        align-items: center;
+        text-align: left;
     }
 
     nav ul li {
         margin-bottom: 10px;
     }
 
+    nav a {
+        font-size: 16px;
+    }
+
+    #container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .movie img {
+        max-height: 300px;
+        object-fit: cover;
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #container {
+        padding: 20px;
+    }
+
     h1 {
         font-size: 2rem;
     }
 
-    .movie-info p {
-        font-size: 1.2rem;
+    .movie img {
+        max-height: 400px;
+        object-fit: cover;
     }
 }
 
-@media only screen and (max-width: 480px) {
-    nav ul li {
-        margin-bottom: 8px;
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .movie {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
     }
 
-    h1 {
-        font-size: 1.5rem;
+    .movie img {
+        max-width: 45%;
+        object-fit: cover;
     }
 
-    .intro p, .movie-info p {
-        font-size: 1rem;
+    nav ul {
+        justify-content: space-evenly;
     }
+}
 
-    footer {
-        font-size: 0.9rem;
-    }
+/* Other Custom Styles (Optional) */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
 }
